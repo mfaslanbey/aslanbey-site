@@ -160,6 +160,34 @@
   .wa{position:fixed;bottom:24px;right:24px;z-index:60;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .25s}
   .wa:hover{transform:scale(1.08)}
 
+  /* chat float */
+  .chat-btn{position:fixed;bottom:92px;right:24px;z-index:60;background:var(--gold);color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;box-shadow:0 10px 30px rgba(229,9,20,.4);transition:transform .25s;cursor:pointer;border:none}
+  .chat-btn:hover{transform:scale(1.08)}
+
+  .chat-tooltip{position:fixed;bottom:103px;right:88px;z-index:61;background:var(--surface);border:1px solid var(--line-strong);color:var(--text);font-size:.88rem;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap;pointer-events:none;opacity:0;transform:translateX(8px);transition:opacity .35s ease,transform .35s ease}
+  .chat-tooltip::after{content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);border:7px solid transparent;border-right:none;border-left-color:var(--line-strong)}
+  .chat-tooltip.visible{opacity:1;transform:translateX(0)}
+
+  .chat-panel{position:fixed;bottom:160px;right:24px;z-index:62;width:320px;background:var(--surface);border:1px solid var(--line-strong);border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:flex;flex-direction:column;overflow:hidden;opacity:0;transform:translateY(16px) scale(.96);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+  .chat-panel.open{opacity:1;transform:translateY(0) scale(1);pointer-events:auto}
+  .chat-head{display:flex;align-items:center;justify-content:space-between;padding:16px 18px;background:var(--gold);color:#fff}
+  .chat-head span{font-family:var(--display);font-weight:700;font-size:1rem}
+  .chat-close{background:none;border:none;color:#fff;font-size:1.3rem;cursor:pointer;line-height:1;padding:0;opacity:.85;transition:opacity .2s}
+  .chat-close:hover{opacity:1}
+  .chat-body{padding:18px 16px;flex:1}
+  .chat-bubble{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px 14px 14px 4px;padding:12px 14px;font-size:.9rem;color:var(--text);line-height:1.5}
+  .chat-footer{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--line)}
+  .chat-input{flex:1;background:var(--bg);border:1px solid var(--line-strong);border-radius:100px;padding:10px 16px;color:var(--text);font-size:.9rem;font-family:var(--body);outline:none;transition:border-color .2s}
+  .chat-input:focus{border-color:var(--gold)}
+  .chat-input::placeholder{color:var(--muted)}
+  .chat-send{background:var(--gold);color:#fff;border:none;border-radius:100px;padding:10px 16px;font-size:.88rem;font-weight:700;cursor:pointer;transition:opacity .2s;white-space:nowrap}
+  .chat-send:hover{opacity:.85}
+
+  @media(max-width:400px){
+    .chat-panel{width:calc(100vw - 24px);right:12px}
+    .chat-tooltip{right:80px;font-size:.82rem}
+  }
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
@@ -419,6 +447,23 @@
 
 <a href="https://wa.me/90XXXXXXXXXX" class="wa" aria-label="WhatsApp">✆</a>
 
+<div class="chat-tooltip" id="chatTooltip">Yardıma ihtiyacın var mı? 👋</div>
+<button class="chat-btn" id="chatBtn" aria-label="Sohbet başlat">💬</button>
+
+<div class="chat-panel" id="chatPanel" role="dialog" aria-modal="true" aria-label="Sohbet paneli">
+  <div class="chat-head">
+    <span>Aslanbey</span>
+    <button class="chat-close" id="chatClose" aria-label="Kapat">×</button>
+  </div>
+  <div class="chat-body">
+    <div class="chat-bubble">Merhaba! Markanı büyütmek için buradayım, nasıl yardımcı olabilirim? 🚀</div>
+  </div>
+  <div class="chat-footer">
+    <input class="chat-input" id="chatInput" type="text" placeholder="Mesajını yaz…" maxlength="300">
+    <button class="chat-send" id="chatSend">Gönder</button>
+  </div>
+</div>
+
 <script>
   // mobile menu
   document.getElementById('toggle').addEventListener('click',function(){
@@ -440,6 +485,52 @@
   // scroll reveal
   const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{threshold:.15});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // chat widget
+  (function(){
+    const btn=document.getElementById('chatBtn');
+    const panel=document.getElementById('chatPanel');
+    const closeBtn=document.getElementById('chatClose');
+    const tooltip=document.getElementById('chatTooltip');
+    const input=document.getElementById('chatInput');
+    const send=document.getElementById('chatSend');
+    const WA='https://wa.me/90XXXXXXXXXX';
+
+    // tooltip: 3s sonra göster, 5s sonra kapat
+    let tooltipTimer=setTimeout(function(){
+      tooltip.classList.add('visible');
+      setTimeout(function(){tooltip.classList.remove('visible');},5000);
+    },3000);
+
+    function openPanel(){
+      panel.classList.add('open');
+      tooltip.classList.remove('visible');
+      clearTimeout(tooltipTimer);
+      setTimeout(function(){input.focus();},320);
+    }
+    function closePanel(){panel.classList.remove('open');}
+
+    btn.addEventListener('click',function(){
+      panel.classList.contains('open')?closePanel():openPanel();
+    });
+    closeBtn.addEventListener('click',closePanel);
+    tooltip.addEventListener('click',function(){tooltip.classList.remove('visible');});
+
+    function sendMsg(){
+      const msg=input.value.trim();
+      if(!msg)return;
+      window.open(WA+'?text='+encodeURIComponent(msg),'_blank');
+      input.value='';
+      closePanel();
+    }
+    send.addEventListener('click',sendMsg);
+    input.addEventListener('keydown',function(e){if(e.key==='Enter')sendMsg();});
+
+    // panel dışına tıklayınca kapat
+    document.addEventListener('click',function(e){
+      if(panel.classList.contains('open')&&!panel.contains(e.target)&&e.target!==btn){closePanel();}
+    });
+  })();
 </script>
 </body>
 </html>
