@@ -106,6 +106,10 @@
   .about-card .big span{font-size:1.4rem;color:var(--text)}
   .about-card .cap{color:var(--muted);margin-top:10px;font-size:.95rem}
   .about-card hr{border:none;border-top:1px solid var(--line);margin:26px 0}
+  .tool-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
+  .tool-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .tool-row img{height:28px;width:auto;display:block}
+  .icon-red{filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(5500%) hue-rotate(351deg) brightness(97%) contrast(105%)}
 
   /* services */
   .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px}
@@ -263,8 +267,14 @@
       <div class="big">%100<span></span></div>
       <div class="cap">Doğrudan iletişim — arada kimse yok</div>
       <hr>
-      <div class="big">∞<span></span></div>
-      <div class="cap">Meta Ads · Google Ads · Tasarım · Video</div>
+      <div class="tool-label">Kullandığım araçlar</div>
+      <div class="tool-row">
+        <img src="https://cdn.simpleicons.org/davinciresolve/E50914" alt="DaVinci Resolve" title="DaVinci Resolve" height="28">
+        <img src="https://cdn.simpleicons.org/coreldraw/E50914" alt="CorelDRAW" title="CorelDRAW" height="28">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@9/icons/adobephotoshop.svg" alt="Photoshop" title="Adobe Photoshop" height="28" class="icon-red">
+        <img src="https://cdn.simpleicons.org/framer/E50914" alt="Framer" title="Framer" height="28">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@9/icons/visualstudiocode.svg" alt="VS Code" title="Visual Studio Code" height="28" class="icon-red">
+      </div>
     </div>
   </div>
 </section>
