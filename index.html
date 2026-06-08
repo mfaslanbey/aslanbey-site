@@ -17,9 +17,9 @@
     --line-strong:rgba(255,255,255,.14);
     --text:#f4f1ea;
     --muted:#9a968d;
-    --gold:#e8b04b;
-    --gold-deep:#c9912f;
-    --gold-soft:rgba(232,176,75,.12);
+    --gold:#e50914;
+    --gold-deep:#b20710;
+    --gold-soft:rgba(229,9,20,.12);
     --display:"Bricolage Grotesque",serif;
     --body:"Manrope",system-ui,sans-serif;
     --radius:18px;
@@ -39,8 +39,8 @@
     content:"";
     position:fixed;inset:0;
     background:
-      radial-gradient(900px 600px at 80% -10%, rgba(232,176,75,.10), transparent 60%),
-      radial-gradient(700px 500px at -10% 20%, rgba(232,176,75,.05), transparent 55%);
+      radial-gradient(900px 600px at 80% -10%, rgba(229,9,20,.10), transparent 60%),
+      radial-gradient(700px 500px at -10% 20%, rgba(229,9,20,.05), transparent 55%);
     pointer-events:none;z-index:0;
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
@@ -55,8 +55,8 @@
     transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
     cursor:pointer;border:none;
   }
-  .btn-gold{background:var(--gold);color:#1a1407;box-shadow:0 8px 30px rgba(232,176,75,.25)}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(232,176,75,.4)}
+  .btn-gold{background:var(--gold);color:#1a1407;box-shadow:0 8px 30px rgba(229,9,20,.25)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(229,9,20,.4)}
   .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line-strong)}
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
@@ -72,7 +72,7 @@
 
   /* hero */
   .hero{padding:90px 0 70px;text-align:center}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(232,176,75,.25);padding:7px 16px;border-radius:100px;margin-bottom:28px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(229,9,20,.25);padding:7px 16px;border-radius:100px;margin-bottom:28px}
   .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:800}
   .hero h1 .hl{color:var(--gold);font-style:italic}
   .hero p{max-width:620px;margin:26px auto 36px;color:var(--muted);font-size:1.15rem}
@@ -106,14 +106,14 @@
   /* services */
   .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px}
   .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-4px);border-color:rgba(232,176,75,.35);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.35);box-shadow:0 20px 50px rgba(0,0,0,.4)}
   .card .ic{width:48px;height:48px;border-radius:12px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
   .card h3{font-size:1.35rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.98rem}
   .card .tag{position:absolute;top:24px;right:24px;font-size:.72rem;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:5px 11px;border-radius:100px;letter-spacing:.04em}
 
   /* AI band */
-  .ai-band{background:linear-gradient(135deg,rgba(232,176,75,.10),rgba(232,176,75,.02));border:1px solid rgba(232,176,75,.2);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .ai-band{background:linear-gradient(135deg,rgba(229,9,20,.10),rgba(229,9,20,.02));border:1px solid rgba(229,9,20,.2);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .ai-band .stat{font-family:var(--display);font-size:4rem;font-weight:800;color:var(--gold);line-height:1}
   .ai-band h2{font-size:2.2rem;margin-bottom:14px}
   .ai-band p{color:var(--muted);font-size:1.05rem}
