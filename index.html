@@ -83,8 +83,12 @@
   /* logo strip */
   .logos{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:50px}
   .logos .label{text-align:center;color:var(--muted);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px}
-  .logo-row{display:flex;flex-wrap:wrap;gap:18px 40px;justify-content:center;align-items:center;opacity:.85}
-  .logo-chip{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#cfcabf;opacity:.7;transition:opacity .2s}
+  .logo-track{overflow:hidden;position:relative;-webkit-mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)}
+  .logo-track:hover .logo-row{animation-play-state:paused}
+  .logo-row{display:flex;flex-wrap:nowrap;gap:0;align-items:center;width:max-content;animation:marquee 22s linear infinite}
+  @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  .logo-group{display:flex;align-items:center;gap:56px;padding:0 28px}
+  .logo-chip{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#cfcabf;opacity:.7;transition:opacity .2s;white-space:nowrap}
   .logo-chip:hover{opacity:1}
 
   /* section */
@@ -208,13 +212,25 @@
   <div class="wrap">
     <div class="logos">
       <div class="label">Birlikte çalıştığım markalar</div>
-      <div class="logo-row">
-        <span class="logo-chip">Beko</span>
-        <span class="logo-chip">Kuaför Ufuk</span>
-        <span class="logo-chip">Bizetiket</span>
-        <span class="logo-chip">+ Marka</span>
-        <span class="logo-chip">+ Marka</span>
-        <span class="logo-chip">+ Marka</span>
+      <div class="logo-track">
+        <div class="logo-row" aria-hidden="false">
+          <div class="logo-group">
+            <span class="logo-chip">Beko</span>
+            <span class="logo-chip">Kuaför Ufuk</span>
+            <span class="logo-chip">Bizetiket</span>
+            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip">+ Marka</span>
+          </div>
+          <div class="logo-group" aria-hidden="true">
+            <span class="logo-chip">Beko</span>
+            <span class="logo-chip">Kuaför Ufuk</span>
+            <span class="logo-chip">Bizetiket</span>
+            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip">+ Marka</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
