@@ -10,16 +10,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#0a0a0c;
-    --bg-soft:#111114;
-    --surface:#16161a;
-    --line:rgba(255,255,255,.08);
-    --line-strong:rgba(255,255,255,.14);
-    --text:#f4f1ea;
-    --muted:#9a968d;
+    --bg:#ffffff;
+    --bg-soft:#f5f5f7;
+    --surface:#ffffff;
+    --line:rgba(0,0,0,.09);
+    --line-strong:rgba(0,0,0,.14);
+    --text:#1d1d1f;
+    --muted:#6e6e73;
     --gold:#e50914;
     --gold-deep:#b20710;
-    --gold-soft:rgba(229,9,20,.12);
+    --gold-soft:rgba(229,9,20,.08);
     --display:"Bricolage Grotesque",serif;
     --body:"Manrope",system-ui,sans-serif;
     --radius:18px;
@@ -39,13 +39,13 @@
     content:"";
     position:fixed;inset:0;
     background:
-      radial-gradient(900px 600px at 80% -10%, rgba(229,9,20,.10), transparent 60%),
-      radial-gradient(700px 500px at -10% 20%, rgba(229,9,20,.05), transparent 55%);
+      radial-gradient(900px 600px at 80% -10%, rgba(229,9,20,.04), transparent 60%),
+      radial-gradient(700px 500px at -10% 20%, rgba(0,0,0,.02), transparent 55%);
     pointer-events:none;z-index:0;
   }
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
   a{color:inherit;text-decoration:none}
-  h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;font-weight:700}
+  h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;font-weight:700;color:var(--text)}
 
   /* buttons */
   .btn{
@@ -55,15 +55,15 @@
     transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
     cursor:pointer;border:none;
   }
-  .btn-gold{background:var(--gold);color:#1a1407;box-shadow:0 8px 30px rgba(229,9,20,.25)}
-  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(229,9,20,.4)}
-  .btn-ghost{background:transparent;color:var(--text);border:1px solid var(--line-strong)}
+  .btn-gold{background:var(--gold);color:#fff;box-shadow:0 8px 24px rgba(229,9,20,.22)}
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(229,9,20,.32)}
+  .btn-ghost{background:#fff;color:var(--text);border:1px solid var(--line-strong)}
   .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
   /* nav */
-  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(10,10,12,.7);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(14px);background:rgba(255,255,255,.72);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;height:72px}
-  .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.03em;display:flex;align-items:center;gap:.5rem}
+  .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.03em;display:flex;align-items:center;gap:.5rem;color:var(--text)}
   .logo .dot{color:var(--gold)}
   .navlinks{display:flex;gap:30px;align-items:center}
   .navlinks a{color:var(--muted);font-weight:600;font-size:.92rem;transition:color .2s}
@@ -77,14 +77,14 @@
   .hg1{
     width:600px;height:500px;
     top:-150px;left:-100px;
-    background:radial-gradient(ellipse at center,rgba(229,9,20,.13) 0%,rgba(229,9,20,.04) 45%,transparent 70%);
+    background:radial-gradient(ellipse at center,rgba(229,9,20,.07) 0%,rgba(229,9,20,.02) 45%,transparent 70%);
     filter:blur(60px);
     animation:hgMove1 22s ease-in-out infinite alternate;
   }
   .hg2{
     width:520px;height:420px;
     top:0;right:-120px;
-    background:radial-gradient(ellipse at center,rgba(180,20,10,.10) 0%,rgba(229,9,20,.03) 40%,transparent 68%);
+    background:radial-gradient(ellipse at center,rgba(255,120,90,.06) 0%,rgba(229,9,20,.015) 40%,transparent 68%);
     filter:blur(70px);
     animation:hgMove2 28s ease-in-out infinite alternate;
   }
@@ -92,7 +92,7 @@
     width:380px;height:320px;
     bottom:-60px;left:50%;
     transform:translateX(-50%);
-    background:radial-gradient(ellipse at center,rgba(229,9,20,.08) 0%,transparent 65%);
+    background:radial-gradient(ellipse at center,rgba(229,9,20,.045) 0%,transparent 65%);
     filter:blur(50px);
     animation:hgPulse 18s ease-in-out infinite alternate;
   }
@@ -114,7 +114,7 @@
     100%{transform:translateX(-50%) scale(.85);opacity:.5}
   }
   .hero>.wrap{position:relative;z-index:1}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(229,9,20,.25);padding:7px 16px;border-radius:100px;margin-bottom:28px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(229,9,20,.18);padding:7px 16px;border-radius:100px;margin-bottom:28px}
   .hero h1{font-size:clamp(2.6rem,7vw,5.2rem);font-weight:800}
   .hero h1 .hl{color:var(--gold);font-style:italic}
   .hero p{max-width:620px;margin:26px auto 36px;color:var(--muted);font-size:1.05rem}
@@ -125,13 +125,17 @@
   /* logo strip */
   .logos{padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:50px}
   .logos .label{text-align:center;color:var(--muted);font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:22px}
-  .logo-track{overflow:hidden;position:relative;-webkit-mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)}
+  .logo-track{overflow:hidden;position:relative;padding-bottom:48px;margin-bottom:-48px;-webkit-mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%);mask:linear-gradient(to right,transparent 0%,#000 12%,#000 88%,transparent 100%)}
   .logo-track:hover .logo-row{animation-play-state:paused}
   .logo-row{display:flex;flex-wrap:nowrap;gap:0;align-items:center;width:max-content;animation:marquee 22s linear infinite}
   @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   .logo-group{display:flex;align-items:center;gap:56px;padding:0 28px}
-  .logo-chip{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#cfcabf;opacity:.7;transition:opacity .2s;white-space:nowrap}
-  .logo-chip:hover{opacity:1}
+  .logo-chip{font-family:var(--display);font-weight:700;font-size:1.05rem;color:#86868b;opacity:.85;transition:opacity .2s,color .2s;white-space:nowrap;position:relative}
+  .logo-chip:hover{opacity:1;color:var(--text)}
+  .logo-chip::after{content:attr(data-svc);position:absolute;top:175%;left:50%;transform:translateX(-50%) translateY(-5px);background:var(--text);color:#fff;font-family:var(--body);font-size:.72rem;font-weight:700;letter-spacing:0;text-transform:none;padding:6px 11px;border-radius:9px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;box-shadow:0 6px 18px rgba(0,0,0,.18);z-index:5}
+  .logo-chip::before{content:"";position:absolute;top:175%;left:50%;transform:translate(-50%,-9px);border:5px solid transparent;border-bottom-color:var(--text);opacity:0;transition:opacity .2s,transform .2s;pointer-events:none;z-index:5}
+  .logo-chip:hover::after{opacity:1;transform:translateX(-50%) translateY(0)}
+  .logo-chip:hover::before{opacity:1;transform:translate(-50%,0)}
 
   /* section */
   section{padding:90px 0;position:relative}
@@ -143,38 +147,58 @@
   .about{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
   .about .body p{color:var(--muted);font-size:1.08rem;margin-top:18px}
   .about .body strong{color:var(--text)}
-  .about-card{background:linear-gradient(160deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:var(--radius);padding:36px}
+  .about-card{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:0 12px 40px rgba(0,0,0,.05)}
   .about-card .big{font-family:var(--display);font-size:3.4rem;font-weight:800;color:var(--gold);line-height:1}
   .about-card .big span{font-size:1.4rem;color:var(--text)}
   .about-card .cap{color:var(--muted);margin-top:10px;font-size:.95rem}
   .about-card hr{border:none;border-top:1px solid var(--line);margin:26px 0}
   .tool-label{font-size:.75rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
-  .tool-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
-  .tool-row img{height:28px;width:auto;display:block}
-  .icon-red{filter:brightness(0) saturate(100%) invert(13%) sepia(94%) saturate(5500%) hue-rotate(351deg) brightness(97%) contrast(105%)}
+  .tool-row{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+  .tool-row img{height:26px;width:auto;display:block;opacity:.7;transition:opacity .2s}
+  .tool-row img:hover{opacity:1}
 
   /* services */
-  .grid-3{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:46px}
-  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden}
-  .card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.35);box-shadow:0 20px 50px rgba(0,0,0,.4)}
+  .grid-3{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:32px;transition:transform .3s,border-color .3s,box-shadow .3s;position:relative;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+  .card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.25);box-shadow:0 20px 44px rgba(0,0,0,.1)}
   .card .ic{width:48px;height:48px;border-radius:12px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:20px}
   .card h3{font-size:1.35rem;margin-bottom:10px}
   .card p{color:var(--muted);font-size:.98rem}
   .card .tag{position:absolute;top:24px;right:24px;font-size:.72rem;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:5px 11px;border-radius:100px;letter-spacing:.04em}
 
+  /* flip cards */
+  .flip{background:transparent;border:none;perspective:1200px;min-height:250px;cursor:pointer}
+  .flip-inner{position:relative;width:100%;height:100%;min-height:250px;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+  .flip:hover .flip-inner,.flip.flipped .flip-inner{transform:rotateY(180deg)}
+  .flip-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(0,0,0,.04);overflow:hidden}
+  .flip:hover .flip-front{box-shadow:0 4px 16px rgba(0,0,0,.04)}
+  .flip-front{justify-content:flex-start}
+  .flip-front .ic{width:50px;height:50px;border-radius:14px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;margin-bottom:auto}
+  .flip-front .ic svg{width:26px;height:26px;stroke:var(--gold)}
+  .flip-front h3{font-size:1.18rem;margin-top:16px}
+  .flip-front .hint{font-size:.74rem;color:var(--muted);margin-top:8px;font-weight:600}
+  .flip-back{transform:rotateY(180deg);justify-content:center;background:var(--text);border-color:var(--text)}
+  .flip-back .ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .flip-back .ic svg{width:20px;height:20px;stroke:#fff}
+  .flip-back h3{color:#fff;font-size:1rem;margin-bottom:8px}
+  .flip-back p{color:rgba(255,255,255,.82);font-size:.82rem;line-height:1.5}
+
   /* AI band */
-  .ai-band{background:linear-gradient(135deg,rgba(229,9,20,.10),rgba(229,9,20,.02));border:1px solid rgba(229,9,20,.2);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .ai-band{background:linear-gradient(135deg,rgba(229,9,20,.06),rgba(229,9,20,.01));border:1px solid rgba(229,9,20,.14);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
   .ai-band .stat{font-family:var(--display);font-size:4rem;font-weight:800;color:var(--gold);line-height:1}
   .ai-band h2{font-size:2.2rem;margin-bottom:14px}
   .ai-band p{color:var(--muted);font-size:1.05rem}
+  .ai-tools{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:22px;flex-wrap:wrap}
+  .ai-tools img{height:26px;width:auto;opacity:.65;transition:opacity .2s}
+  .ai-tools img:hover{opacity:1}
 
   /* testimonials */
   .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-  .testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column}
-  .testi .quote{color:#d8d3c8;font-size:1rem;flex:1}
+  .testi{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:30px;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(0,0,0,.04)}
+  .testi .quote{color:#3a3a3c;font-size:1rem;flex:1}
   .testi .who{display:flex;align-items:center;gap:12px;margin-top:24px}
-  .testi .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;color:#1a1407}
-  .testi .who b{display:block;font-size:.95rem}
+  .testi .av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),var(--gold-deep));display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;color:#fff}
+  .testi .who b{display:block;font-size:.95rem;color:var(--text)}
   .testi .who small{color:var(--muted);font-size:.82rem}
 
   /* faq */
@@ -187,7 +211,7 @@
   .faq-a p{padding:0 0 24px}
 
   /* cta final */
-  .cta-final{text-align:center;background:linear-gradient(160deg,var(--surface),var(--bg-soft));border:1px solid var(--line);border-radius:28px;padding:64px 30px}
+  .cta-final{text-align:center;background:var(--bg-soft);border:1px solid var(--line);border-radius:28px;padding:64px 30px;box-shadow:0 12px 40px rgba(0,0,0,.05)}
   .cta-final h2{font-size:clamp(2rem,4.5vw,3rem);font-weight:800}
   .cta-final p{color:var(--muted);margin:18px auto 30px;max-width:480px;font-size:1.08rem}
 
@@ -195,36 +219,138 @@
   footer{border-top:1px solid var(--line);padding:60px 0 30px;margin-top:40px}
   .foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
   .foot-grid p{color:var(--muted);font-size:.95rem;margin-top:14px;max-width:320px}
+  .foot-loc{margin-top:18px;display:flex;flex-direction:column;gap:6px}
+  .foot-loc div{font-size:.95rem;color:var(--text)}
+  .foot-loc b{font-weight:700}
+  .foot-loc span{font-weight:300;color:var(--muted)}
   .foot-grid h4{font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
   .foot-grid ul{list-style:none}
   .foot-grid li{margin-bottom:10px}
   .foot-grid a{color:var(--muted);font-size:.95rem;transition:color .2s}
   .foot-grid a:hover{color:var(--text)}
-  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:50px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;flex-wrap:wrap;gap:12px}
+  .foot-badges{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+  .badge{display:inline-flex;align-items:center;gap:8px;background:var(--bg-soft);border:1px solid var(--line);border-radius:100px;padding:9px 16px;font-size:.85rem;font-weight:700;color:var(--text)}
+  .badge svg{width:16px;height:16px;flex-shrink:0}
+  .badge .g{color:#4285F4}
+  .badge .m{color:#0866FF}
+  .foot-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;flex-wrap:wrap;gap:16px}
+  .socials{display:flex;align-items:center;gap:8px}
+  .socials .lbl{font-weight:700;color:var(--text);margin-right:8px}
+  .socials a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);color:var(--muted);transition:color .2s,border-color .2s,transform .2s}
+  .socials a:hover{color:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+  .socials svg{width:18px;height:18px}
 
   /* whatsapp float */
   .wa{position:fixed;bottom:24px;right:24px;z-index:60;background:#25d366;color:#fff;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.6rem;box-shadow:0 10px 30px rgba(37,211,102,.4);transition:transform .25s}
   .wa:hover{transform:scale(1.08)}
 
   /* wa tooltip */
-  .wa-tooltip{position:fixed;bottom:32px;right:92px;z-index:61;background:var(--surface);border:1px solid var(--line-strong);color:var(--text);font-size:.88rem;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap;cursor:pointer;opacity:0;transform:translateX(8px);transition:opacity .35s ease,transform .35s ease;pointer-events:none}
-  .wa-tooltip::after{content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);border:7px solid transparent;border-right:none;border-left-color:var(--line-strong)}
+  .wa-tooltip{position:fixed;bottom:32px;right:92px;z-index:61;background:var(--surface);border:1px solid var(--line-strong);color:var(--text);font-size:.88rem;font-weight:600;padding:10px 16px;border-radius:12px;white-space:nowrap;cursor:pointer;opacity:0;transform:translateX(8px);transition:opacity .35s ease,transform .35s ease;pointer-events:none;box-shadow:0 8px 24px rgba(0,0,0,.1)}
+  .wa-tooltip::after{content:"";position:absolute;right:-7px;top:50%;transform:translateY(-50%);border:7px solid transparent;border-right:none;border-left-color:var(--surface)}
   .wa-tooltip.visible{opacity:1;transform:translateX(0);pointer-events:auto}
+  @media(max-width:520px){
+    .grid-3{grid-template-columns:1fr}
+  }
   @media(max-width:480px){
     .wa-tooltip{right:auto;left:16px;bottom:32px}
     .wa-tooltip::after{display:none}
   }
 
+
   /* reveal */
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
+  /* indirim kuponu */
+  .coupon{position:fixed;top:-460px;left:24px;z-index:125;background:var(--surface);border:1px solid var(--line);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.2);width:330px;max-width:calc(100vw - 32px);transition:top .75s cubic-bezier(.34,1.45,.64,1),opacity .35s;overflow:hidden}
+  .coupon.show{top:96px}
+  .coupon.hide{opacity:0;top:-460px}
+  .coupon-top{background:var(--gold);color:#fff;padding:18px 22px;text-align:center;position:relative}
+  .coupon-top .eb{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+  .coupon-top .big{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;margin:4px 0 2px}
+  .coupon-top .sm{font-size:.82rem;opacity:.92}
+  .coupon-x{position:absolute;top:10px;right:12px;width:26px;height:26px;border:none;background:rgba(255,255,255,.22);color:#fff;border-radius:50%;font-size:.85rem;cursor:pointer;line-height:1}
+  .coupon-x:hover{background:rgba(255,255,255,.4)}
+  .coupon-notch{position:relative;height:0}
+  .coupon-notch::before,.coupon-notch::after{content:"";position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:var(--bg)}
+  .coupon-notch::before{left:-11px}
+  .coupon-notch::after{right:-11px}
+  .coupon-body{padding:22px;text-align:center}
+  .coupon-body .dash{border-top:2px dashed var(--line-strong);margin:-2px 0 16px}
+  .coupon-code{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:.1em;color:var(--text);background:var(--gold-soft);border:1px dashed var(--gold);border-radius:10px;padding:8px 18px;margin-bottom:16px}
+  .coupon-cta{display:block;background:#25d366;color:#fff;font-weight:800;padding:13px;border-radius:100px;text-decoration:none;font-size:.92rem}
+  .coupon-cta:hover{background:#1da851}
+  @media(max-width:520px){.coupon{left:16px}.coupon.show{top:80px}}
+
+  /* paket bulucu sihirbazı */
+  .wiz-tab{position:fixed;right:0;top:44%;transform:translateX(120%);z-index:62;background:var(--gold);color:#fff;border:none;cursor:pointer;padding:12px 16px;border-radius:14px 0 0 14px;box-shadow:-6px 6px 24px rgba(229,9,20,.3);display:flex;align-items:center;gap:9px;font-weight:700;font-size:.88rem;font-family:var(--body);transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
+  .wiz-tab.show{transform:translateX(0)}
+  .wiz-tab:hover{box-shadow:-8px 8px 32px rgba(229,9,20,.45)}
+  .wiz-tab .wave{font-size:1.3rem;display:inline-block;transform-origin:70% 80%;animation:wave 2.4s ease-in-out infinite}
+  @keyframes wave{0%,55%,100%{transform:rotate(0)}8%{transform:rotate(16deg)}16%{transform:rotate(-8deg)}24%{transform:rotate(16deg)}32%{transform:rotate(-4deg)}40%{transform:rotate(12deg)}}
+  @media(max-width:520px){.wiz-tab .lbl{display:none}.wiz-tab{padding:14px}}
+
+  .wiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:130;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:20px}
+  .wiz-overlay.open{opacity:1;pointer-events:auto}
+  .wiz-modal{background:var(--surface);border-radius:22px;max-width:440px;width:100%;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:translateY(20px) scale(.98);transition:transform .3s;max-height:90vh;overflow-y:auto;position:relative}
+  .wiz-overlay.open .wiz-modal{transform:none}
+  .wiz-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border:none;background:var(--bg-soft);border-radius:50%;font-size:1.1rem;cursor:pointer;color:var(--muted)}
+  .wiz-close:hover{background:#eee;color:var(--text)}
+  .wiz-eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+  .wiz-modal h3{font-size:1.5rem;margin:6px 0 4px}
+  .wiz-modal .wiz-sub{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+  .wiz-progress{display:flex;gap:6px;margin-bottom:22px}
+  .wiz-progress span{height:5px;flex:1;border-radius:100px;background:var(--line)}
+  .wiz-progress span.on{background:var(--gold)}
+  .wiz-q{font-family:var(--display);font-weight:700;font-size:1.15rem;margin-bottom:14px}
+  .wiz-opt{display:block;width:100%;text-align:left;padding:14px 16px;border:1px solid var(--line-strong);border-radius:12px;background:#fff;font-weight:600;cursor:pointer;margin-top:10px;transition:.2s;font-family:var(--body);font-size:.95rem;color:var(--text)}
+  .wiz-opt:hover{border-color:var(--gold);background:var(--gold-soft);transform:translateX(3px)}
+  .wiz-opt.sel{border-color:var(--gold);background:var(--gold-soft)}
+  .wiz-opt.sel::after{content:"✓";float:right;color:var(--gold);font-weight:800}
+  .wiz-next{display:block;width:100%;margin-top:16px;background:var(--gold);color:#fff;border:none;border-radius:100px;padding:13px;font-weight:800;font-size:.95rem;cursor:pointer;font-family:var(--body)}
+  .wiz-next:disabled{background:#ccc;cursor:not-allowed}
+  .wiz-back{background:none;border:none;color:var(--muted);font-size:.88rem;cursor:pointer;margin-top:18px;font-family:var(--body)}
+  .wiz-back:hover{color:var(--text)}
+  .wiz-pkg{background:var(--bg-soft);border:1px solid var(--line);border-radius:16px;padding:22px;margin:8px 0 18px}
+  .wiz-pkg .pn{font-family:var(--display);font-weight:800;font-size:1.3rem;color:var(--gold)}
+  .wiz-pkg ul{list-style:none;margin-top:14px}
+  .wiz-pkg li{padding:6px 0 6px 26px;position:relative;font-size:.95rem}
+  .wiz-pkg li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
+  .wiz-cta{display:block;text-align:center;background:#25d366;color:#fff;font-weight:800;padding:14px;border-radius:100px;text-decoration:none;font-size:.95rem}
+  .wiz-cta:hover{background:#1da851}
+
+  /* duyurular */
+  .ann-link{position:relative}
+  .ann-badge{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--gold);margin-left:5px;vertical-align:top;animation:annPulse 1.8s ease-in-out infinite}
+  @keyframes annPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(1.3)}}
+  .ann-item{border:1px solid var(--line);border-radius:14px;margin-top:12px;overflow:hidden;background:var(--surface)}
+  .ann-q{width:100%;background:none;border:none;text-align:left;cursor:pointer;padding:16px 18px;display:flex;flex-direction:column;gap:6px;font-family:var(--body)}
+  .ann-q .top{display:flex;align-items:center;gap:10px}
+  .ann-q .date{font-size:.72rem;font-weight:700;color:#fff;background:var(--gold);padding:3px 9px;border-radius:100px}
+  .ann-q .new{font-size:.66rem;font-weight:800;color:var(--gold);border:1px solid var(--gold);padding:2px 7px;border-radius:100px;letter-spacing:.04em}
+  .ann-q .ttl{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--text);margin-top:2px}
+  .ann-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .ann-a div{padding:0 18px 18px;color:var(--muted);font-size:.92rem;line-height:1.6}
+  .ann-item.open .ann-a{max-height:600px}
+  .ann-item.open .ann-q .ttl{color:var(--gold)}
+
+  /* custom cursor (sadece masaüstü) */
+  .cursor-dot,.cursor-ring{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;opacity:0;transition:opacity .3s}
+  .cursor-dot{width:7px;height:7px;background:var(--gold);transform:translate(-50%,-50%)}
+  .cursor-ring{width:38px;height:38px;border:1.5px solid rgba(0,0,0,.28);transform:translate(-50%,-50%);transition:width .25s ease,height .25s ease,border-color .25s ease,background .25s ease,opacity .3s}
+  .cursor-ring.hover{width:60px;height:60px;border-color:var(--gold);background:var(--gold-soft)}
+  body.cursor-on .cursor-dot,body.cursor-on .cursor-ring{opacity:1}
+  @media(hover:hover) and (pointer:fine){
+    body.cursor-on,body.cursor-on a,body.cursor-on button,body.cursor-on .flip,body.cursor-on .faq-q{cursor:none}
+  }
+
   @media(max-width:860px){
-    .navlinks{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:var(--bg-soft);border-bottom:1px solid var(--line);padding:24px;gap:18px;display:none}
+    .navlinks{position:fixed;inset:72px 0 auto 0;flex-direction:column;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:24px;gap:18px;display:none}
     .navlinks.show{display:flex}
     .menu-toggle{display:block}
     .about,.ai-band,.foot-grid{grid-template-columns:1fr;gap:32px}
-    .grid-3,.testi-grid{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:repeat(2,1fr)}
+    .testi-grid{grid-template-columns:1fr}
     .ai-band{padding:36px;text-align:center}
     .foot-bottom{justify-content:center;text-align:center}
   }
@@ -239,7 +365,7 @@
       <div class="navlinks" id="nav">
         <a href="#hizmetler">Hizmetler</a>
         <a href="#nasil">Nasıl Çalışıyorum</a>
-        <a href="#yorumlar">Yorumlar</a>
+        <a href="#" id="annOpen" class="ann-link">Duyurular<span class="ann-badge"></span></a>
         <a href="#sss">SSS</a>
         <a href="#iletisim" class="btn btn-gold" style="padding:10px 20px">Teklif Al</a>
       </div>
@@ -275,20 +401,30 @@
       <div class="logo-track">
         <div class="logo-row" aria-hidden="false">
           <div class="logo-group">
-            <span class="logo-chip">Beko</span>
-            <span class="logo-chip">Kuaför Ufuk</span>
-            <span class="logo-chip">Bizetiket</span>
-            <span class="logo-chip">+ Marka</span>
-            <span class="logo-chip">+ Marka</span>
-            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">DOĞTAŞ</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">KELEBEK</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">BEKO</span>
+            <span class="logo-chip" data-svc="Web Sitesi + Meta + Etiket Tasarımı">BİZ ETİKET</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">OSMANLI MARKET</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi">UFUK İLHAN</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">OSMANLI GROSS</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi">UFUK ÖZDEMİR</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Web Sitesi">CÜNEYT TOSUN</span>
+            <span class="logo-chip" data-svc="E-Ticaret + Meta + Sosyal Medya">TADIN SÜT</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Sosyal Medya">YAĞCI YASİN</span>
           </div>
           <div class="logo-group" aria-hidden="true">
-            <span class="logo-chip">Beko</span>
-            <span class="logo-chip">Kuaför Ufuk</span>
-            <span class="logo-chip">Bizetiket</span>
-            <span class="logo-chip">+ Marka</span>
-            <span class="logo-chip">+ Marka</span>
-            <span class="logo-chip">+ Marka</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">DOĞTAŞ</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">KELEBEK</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">BEKO</span>
+            <span class="logo-chip" data-svc="Web Sitesi + Meta + Etiket Tasarımı">BİZ ETİKET</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">OSMANLI MARKET</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi">UFUK İLHAN</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Video Çekim">OSMANLI GROSS</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi">UFUK ÖZDEMİR</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Web Sitesi">CÜNEYT TOSUN</span>
+            <span class="logo-chip" data-svc="E-Ticaret + Meta + Sosyal Medya">TADIN SÜT</span>
+            <span class="logo-chip" data-svc="Meta Yönetimi + Sosyal Medya">YAĞCI YASİN</span>
           </div>
         </div>
       </div>
@@ -308,7 +444,7 @@
       <p>Amacım yalnızca hizmet sunmak değil; markanı tanıyan, süreci sahiplenen ve uzun vadeli düşünen bir iş ortağı olmaktır.</p>
     </div>
     <div class="about-card reveal">
-      <div class="big">7<span>+ yıl</span></div>
+      <div class="big">13<span>+ yıl</span></div>
       <div class="cap">Reklam ve kreatif tecrübesi</div>
       <hr>
       <div class="big">%100<span></span></div>
@@ -316,11 +452,11 @@
       <hr>
       <div class="tool-label">Kullandığım araçlar</div>
       <div class="tool-row">
-        <img src="https://cdn.simpleicons.org/davinciresolve/E50914" alt="DaVinci Resolve" title="DaVinci Resolve" height="28">
-        <img src="https://cdn.simpleicons.org/coreldraw/E50914" alt="CorelDRAW" title="CorelDRAW" height="28">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@9/icons/adobephotoshop.svg" alt="Photoshop" title="Adobe Photoshop" height="28" class="icon-red">
-        <img src="https://cdn.simpleicons.org/framer/E50914" alt="Framer" title="Framer" height="28">
-        <img src="https://cdn.jsdelivr.net/npm/simple-icons@9/icons/visualstudiocode.svg" alt="VS Code" title="Visual Studio Code" height="28" class="icon-red">
+        <img src="https://cdn.simpleicons.org/davinciresolve/1d1d1f" alt="DaVinci Resolve" title="DaVinci Resolve" height="26">
+        <img src="https://cdn.simpleicons.org/coreldraw/1d1d1f" alt="CorelDRAW" title="CorelDRAW" height="26">
+        <img src="https://cdn.simpleicons.org/adobephotoshop/1d1d1f" alt="Photoshop" title="Adobe Photoshop" height="26">
+        <img src="https://cdn.simpleicons.org/framer/1d1d1f" alt="Framer" title="Framer" height="26">
+        <img src="https://cdn.simpleicons.org/visualstudiocode/1d1d1f" alt="VS Code" title="Visual Studio Code" height="26">
       </div>
     </div>
   </div>
@@ -335,25 +471,61 @@
       <p class="sec-sub">Tek tek ajans aramak yerine; reklamdan tasarıma, videodan stratejiye kadar tek elden.</p>
     </div>
     <div class="grid-3">
-      <div class="card reveal">
-        <div class="ic">🎯</div>
-        <h3>Meta Ads Yönetimi</h3>
-        <p>Instagram ve Facebook reklamları. Doğru kitle, temiz kurgu, ölçülebilir dönüşüm. Bütçeni boşa harcatmam.</p>
+      <div class="flip reveal">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+            <h3>Meta Ads Yönetimi</h3>
+            <div class="hint">Detay için üzerine gel →</div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+            <h3>Meta Ads Yönetimi</h3>
+            <p>Instagram ve Facebook reklamları. Doğru kitle, temiz kurgu, ölçülebilir dönüşüm. Bütçeni boşa harcatmam.</p>
+          </div>
+        </div>
       </div>
-      <div class="card reveal">
-        <div class="ic">🔍</div>
-        <h3>Google Ads Yönetimi</h3>
-        <p>Arama, görüntülü ve performans kampanyaları. Müşterin seni tam aradığı anda karşısında olursun.</p>
+      <div class="flip reveal">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h3>Google Ads Yönetimi</h3>
+            <div class="hint">Detay için üzerine gel →</div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+            <h3>Google Ads Yönetimi</h3>
+            <p>Arama, görüntülü ve performans kampanyaları. Müşterin seni tam aradığı anda karşısında olursun.</p>
+          </div>
+        </div>
       </div>
-      <div class="card reveal">
-        <div class="ic">🎨</div>
-        <h3>Grafik Tasarım</h3>
-        <p>Sosyal medya içerikleri, reklam görselleri, kurumsal kimlik. Markanı her yerde tutarlı ve profesyonel gösteririm.</p>
+      <div class="flip reveal">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <h3>Grafik Tasarım</h3>
+            <div class="hint">Detay için üzerine gel →</div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <h3>Grafik Tasarım</h3>
+            <p>Sosyal medya içerikleri, reklam görselleri, kurumsal kimlik. Markanı her yerde tutarlı ve profesyonel gösteririm.</p>
+          </div>
+        </div>
       </div>
-      <div class="card reveal">
-        <div class="ic">🎬</div>
-        <h3>Video Prodüksiyon</h3>
-        <p>Tanıtım videoları, reels, reklam filmleri. Çekimden kurguya, renk düzenlemesinden teslimata kadar.</p>
+      <div class="flip reveal">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
+            <h3>Video Prodüksiyon</h3>
+            <div class="hint">Detay için üzerine gel →</div>
+          </div>
+          <div class="flip-face flip-back">
+            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
+            <h3>Video Prodüksiyon</h3>
+            <p>Tanıtım videoları, reels, reklam filmleri. Çekimden kurguya, renk düzenlemesinden teslimata kadar.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -371,30 +543,12 @@
       <div style="text-align:center">
         <div class="stat">5X</div>
         <p style="margin-top:8px">Daha hızlı kreatif test ve üretim</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- YORUMLAR -->
-<section id="yorumlar">
-  <div class="wrap">
-    <div class="reveal">
-      <div class="sec-tag">Yorumlar</div>
-      <h2 class="sec-title">Markalar ne diyor?</h2>
-    </div>
-    <div class="testi-grid">
-      <div class="testi reveal">
-        <p class="quote">"Reklamları devraldıktan sonra dönüşüm maliyetimiz ciddi düştü. Tek kişiyle çalışmak ajanstan çok daha hızlı ve net."</p>
-        <div class="who"><span class="av">M</span><div><b>Müşteri Adı</b><small>Marka · Sektör</small></div></div>
-      </div>
-      <div class="testi reveal">
-        <p class="quote">"Hem reklamı hem tasarımı hem videoyu aynı kişiden almak işimizi çok kolaylaştırdı. Her şey tutarlı ilerliyor."</p>
-        <div class="who"><span class="av">A</span><div><b>Müşteri Adı</b><small>Marka · Sektör</small></div></div>
-      </div>
-      <div class="testi reveal">
-        <p class="quote">"Talebe aynı gün dönüş, net raporlama ve gerçek sonuç. Kendi ekibimizin parçası gibi çalışıyor."</p>
-        <div class="who"><span class="av">K</span><div><b>Müşteri Adı</b><small>Marka · Sektör</small></div></div>
+        <div class="ai-tools">
+          <img src="https://cdn.simpleicons.org/claude/1d1d1f" alt="Claude" title="Claude">
+          <img src="https://cdn.simpleicons.org/openai/1d1d1f" alt="ChatGPT" title="ChatGPT">
+          <img src="https://cdn.simpleicons.org/adobe/1d1d1f" alt="Adobe Firefly" title="Adobe Firefly">
+          <img src="https://cdn.simpleicons.org/googlegemini/1d1d1f" alt="Gemini" title="Google Gemini">
+        </div>
       </div>
     </div>
   </div>
@@ -444,8 +598,8 @@
       <h2>Markanı büyütmeye hazır mısın?</h2>
       <p>Ücretsiz bir görüşme yapalım. İhtiyacını dinleyeyim, sana özel bir plan çıkarayım.</p>
       <div class="hero-cta">
-        <a href="https://wa.me/90XXXXXXXXXX" class="btn btn-gold">WhatsApp'tan Yaz →</a>
-        <a href="mailto:info@aslanbey.pro" class="btn btn-ghost">E-posta Gönder</a>
+        <a href="https://wa.me/905435188995" class="btn btn-gold">WhatsApp'tan Yaz →</a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=bilgi@aslanbey.pro&su=Teklif%20Talebi" target="_blank" rel="noopener" class="btn btn-ghost">E-posta Gönder</a>
       </div>
     </div>
   </div>
@@ -458,6 +612,11 @@
       <div>
         <a href="#" class="logo">ASLANBEY<span class="dot">.pro</span></a>
         <p>Markanın dijital pazarlama ve kreatif partneri. Reklamdan tasarıma, videodan stratejiye tek elden.</p>
+        <div class="foot-loc">
+          <div><b>İzmir</b> <span>— Merkez</span></div>
+          <div><b>Şanlıurfa</b> <span>— Şube</span></div>
+          <div><b>Adıyaman</b> <span>— Mobil</span></div>
+        </div>
       </div>
       <div>
         <h4>Hizmetler</h4>
@@ -469,26 +628,229 @@
         </ul>
       </div>
       <div>
-        <h4>İletişim</h4>
+        <h4>Hızlı Erişim</h4>
         <ul>
-          <li><a href="mailto:info@aslanbey.pro">info@aslanbey.pro</a></li>
-          <li><a href="https://wa.me/90XXXXXXXXXX">WhatsApp</a></li>
-          <li><a href="#">Instagram</a></li>
+          <li><a href="#nasil">Nasıl Çalışıyorum</a></li>
+          <li><a href="#sss">SSS</a></li>
           <li><a href="#iletisim">Teklif Al</a></li>
         </ul>
       </div>
     </div>
+
     <div class="foot-bottom">
       <span>© 2026 ASLANBEY.pro — Tüm hakları saklıdır.</span>
-      <span>Karaköprü, Şanlıurfa · Türkiye</span>
+      <div class="socials">
+        <span class="lbl">Beni takip edin</span>
+        <a href="https://instagram.com/aslanbey.pro" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://www.linkedin.com/in/mfaslanbey" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a>
+      </div>
     </div>
   </div>
 </footer>
 
+<div class="wiz-overlay" id="annOverlay">
+  <div class="wiz-modal" id="annModal">
+    <button class="wiz-close" id="annClose" aria-label="Kapat">✕</button>
+    <div class="wiz-eyebrow">📢 Duyurular & Haberler</div>
+    <h3 style="font-size:1.4rem;margin:6px 0 4px">Güncel gelişmeler</h3>
+    <div class="wiz-sub">Meta, reklam ve dijital dünyadan son haberler.</div>
+    <div id="annList"></div>
+  </div>
+</div>
+
+<div class="coupon" id="coupon">
+  <div class="coupon-top">
+    <button class="coupon-x" id="couponX" aria-label="Kapat">✕</button>
+    <div class="eb">🎁 İlk Aya Özel</div>
+    <div class="big">%5 İndirim</div>
+    <div class="sm">İlk ay hizmet bedelinde geçerli</div>
+  </div>
+  <div class="coupon-notch"></div>
+  <div class="coupon-body">
+    <div class="dash"></div>
+    <div class="coupon-code">ILKAY5</div>
+    <a class="coupon-cta" id="couponCta" href="#" target="_blank" rel="noopener">Kuponu Kullan →</a>
+  </div>
+</div>
+
+<button class="wiz-tab" id="wizTab"><span class="wave">👋</span><span class="lbl">Sana özel paket</span></button>
+<div class="wiz-overlay" id="wizOverlay">
+  <div class="wiz-modal" id="wizModal">
+    <button class="wiz-close" id="wizClose" aria-label="Kapat">✕</button>
+    <div id="wizBody"></div>
+  </div>
+</div>
+
+<div class="cursor-dot" id="curDot"></div>
+<div class="cursor-ring" id="curRing"></div>
+
 <div class="wa-tooltip" id="waTooltip">👋 Yardıma ihtiyacın var mı?</div>
-<a href="https://wa.me/90XXXXXXXXXX" class="wa" id="waBtn" aria-label="WhatsApp">✆</a>
+<a href="https://wa.me/905435188995" class="wa" id="waBtn" aria-label="WhatsApp">✆</a>
 
 <script>
+  // duyurular
+  (function(){
+    // YENİ DUYURU EKLEMEK İÇİN: en üste yeni bir nesne ekle {date, title, body, isNew}
+    const ANN=[
+      {date:'Haziran 2026', isNew:true,
+       title:'Meta\'dan Türkiye reklamlarına %5 dijital hizmet vergisi',
+       body:'2026 ortasından itibaren Meta, Türkiye dahil bazı ülkelerde yayınlanan reklamlara dijital hizmet vergisi nedeniyle %5\'e kadar ek ücret uyguluyor. Reklam bütçesi planlamasını buna göre güncellemek önemli — kampanya tekliflerinizde bu kalemi hesaba katıyoruz.'},
+      {date:'Mayıs 2026', isNew:true,
+       title:'AI içerikte zorunlu etiketleme dönemi',
+       body:'Meta, yapay zeka ile üretilen reklam görsellerinde açıklama/etiketleme zorunluluğu getirdi. Açıklanmamış AI içeriği artık reklam reddi sebebi olabiliyor. AI destekli üretimlerimizde bu kurallara tam uyum sağlıyoruz.'},
+      {date:'Nisan 2026', isNew:false,
+       title:'Meta hesap kapatma dalgası ve korunma yolları',
+       body:'Türkiye\'deki işletme hesaplarını etkileyen kapatma dalgasına karşı; Hesap Merkezi yapılandırması, yedek yönetici ve Business Partner doğrulaması gibi önlemlerle hesaplarınızı koruma altına alıyoruz.'},
+    ];
+    const link=document.getElementById('annOpen'), ov=document.getElementById('annOverlay'),
+          list=document.getElementById('annList'), closeBtn=document.getElementById('annClose');
+    list.innerHTML=ANN.map((a,i)=>`<div class="ann-item">
+      <button class="ann-q" data-i="${i}">
+        <span class="top"><span class="date">${a.date}</span>${a.isNew?'<span class="new">YENİ</span>':''}</span>
+        <span class="ttl">${a.title}</span>
+      </button>
+      <div class="ann-a"><div>${a.body}</div></div>
+    </div>`).join('');
+    list.querySelectorAll('.ann-q').forEach(q=>q.onclick=()=>{
+      const item=q.parentElement, a=item.querySelector('.ann-a'), open=item.classList.contains('open');
+      list.querySelectorAll('.ann-item').forEach(x=>{x.classList.remove('open');x.querySelector('.ann-a').style.maxHeight=null;});
+      if(!open){item.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';}
+    });
+    function open(e){e.preventDefault();ov.classList.add('open');document.getElementById('nav').classList.remove('show');}
+    link.addEventListener('click',open);
+    closeBtn.onclick=()=>ov.classList.remove('open');
+    ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});
+  })();
+
+  // indirim kuponu
+  (function(){
+    const c=document.getElementById('coupon'), x=document.getElementById('couponX'), cta=document.getElementById('couponCta');
+    const msg='Merhaba, web sitesindeki *İlk Aya Özel %5 indirim* kuponunu (ILKAY5) kullanmak istiyorum.';
+    cta.href='https://wa.me/905435188995?text='+encodeURIComponent(msg);
+    setTimeout(()=>c.classList.add('show'),4500);
+    function hide(){c.classList.remove('show');c.classList.add('hide');setTimeout(()=>{c.style.display='none';},450);}
+    x.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();hide();});
+    cta.addEventListener('click',()=>setTimeout(hide,200));
+  })();
+
+  // paket bulucu sihirbazı
+  (function(){
+    const WA='905435188995';
+    const tab=document.getElementById('wizTab'), ov=document.getElementById('wizOverlay'),
+          body=document.getElementById('wizBody'), closeBtn=document.getElementById('wizClose');
+    const steps=[
+      {key:'stage', type:'single', q:'İşletmen hangi aşamada?', opts:[
+        {l:'Yeni başlıyorum',v:1},{l:'Büyüme dönemindeyim',v:2},{l:'Kurumsallaşmak istiyorum',v:3}]},
+      {key:'sektor', type:'single', q:'Hangi alandasın?', opts:[
+        {l:'E-ticaret / Online satış',v:'eticaret'},{l:'Yerel hizmet (kuaför, klinik vb.)',v:'yerel'},
+        {l:'Kafe & Restoran',v:'kafe'},{l:'Mağaza & Perakende',v:'magaza'},{l:'Diğer',v:'diger'}]},
+      {key:'needs', type:'multi', q:'Hangi alanlarda destek istiyorsun?', sub:'Birden fazla seçebilirsin.', opts:[
+        {l:'Sosyal Medya Yönetimi',v:'sm'},{l:'Reklam (Meta / Google)',v:'ads'},
+        {l:'Video & İçerik',v:'video'},{l:'Tasarım',v:'design'},{l:'Web & E-ticaret',v:'web'}]},
+      {key:'pri', type:'single', q:'Önceliğin ne?', opts:[
+        {l:'Daha çok satış & müşteri',v:'sat'},{l:'Bilinirlik & takipçi',v:'bil'},
+        {l:'Profesyonel marka görünümü',v:'mar'},{l:'Hepsi dengeli olsun',v:'denge'}]},
+      {key:'bud', type:'single', q:'Aylık bütçe aralığın?', opts:[
+        {l:'5 – 10 bin ₺',v:1},{l:'10 – 20 bin ₺',v:2},{l:'20 – 40 bin ₺',v:3},{l:'40 bin ₺ ve üzeri',v:4}]},
+    ];
+    // ihtiyaç alanı -> tier'a göre gerçek hizmet
+    const SVC={
+      sm:   {bas:'8 Post Yönetimi', buy:'14–20 Post Yönetimi', pre:'30 Post Yönetimi'},
+      ads:  {bas:'Meta Yönetim · Aylık', buy:'Meta Yönetim · 3 Ay', pre:'Meta Yönetim · 6 Ay + Lead Toplama Sistemi'},
+      video:{bas:'1 Reels Çekim + Kurgu', buy:'3 Reels Çekim + Kurgu', pre:'Tam Gün Prodüksiyon'},
+      design:{bas:'Etiket / Post Tasarımı', buy:'Logo Tasarımı', pre:'Kurumsal Kimlik Tasarımı'},
+      web:  {bas:'Landing Page', buy:'Kurumsal Website', pre:'E-Ticaret Sitesi + SEO Başlangıç Paketi'},
+    };
+    const TIER={bas:'Başlangıç Paketi',buy:'Büyüme Paketi',pre:'Premium Paket'};
+    const NOTE={bas:'Markanı düzenli ve profesyonel göstermek için ideal başlangıç.',
+                buy:'İçerik + reklamla satış ve müşteri kazanımına odaklı.',
+                pre:'Kurumsal markalar için tam kapsamlı dijital yönetim.'};
+    let ans={}, multi=[], step=0;
+
+    function progress(){let s='';for(let i=0;i<steps.length;i++)s+=`<span class="${i<=step?'on':''}"></span>`;return `<div class="wiz-progress">${s}</div>`;}
+    function renderStep(){
+      const st=steps[step];
+      let opts;
+      if(st.type==='multi'){
+        opts=st.opts.map(o=>`<button class="wiz-opt ${multi.includes(o.v)?'sel':''}" data-v="${o.v}">${o.l}</button>`).join('')
+          +`<button class="wiz-next" id="wizNext" ${multi.length?'':'disabled'}>Devam et →</button>`;
+      } else {
+        opts=st.opts.map((o,i)=>`<button class="wiz-opt" data-i="${i}">${o.l}</button>`).join('');
+      }
+      body.innerHTML=`<div class="wiz-eyebrow">Paket Bulucu · ${step+1}/${steps.length}</div><h3>Sana özel öneri 👋</h3>
+        <div class="wiz-sub">${st.sub||'Birkaç soruyla en uygun paketi bulalım.'}</div>${progress()}
+        <div class="wiz-q">${st.q}</div>${opts}
+        ${step>0?'<button class="wiz-back">← Geri</button>':''}`;
+      if(st.type==='multi'){
+        body.querySelectorAll('.wiz-opt').forEach(b=>b.onclick=()=>{
+          const v=b.dataset.v; const i=multi.indexOf(v);
+          if(i>=0) multi.splice(i,1); else multi.push(v);
+          b.classList.toggle('sel'); body.querySelector('#wizNext').disabled=!multi.length;
+        });
+        body.querySelector('#wizNext').onclick=()=>{ans.needs=multi.slice();step++;renderStep();};
+      } else {
+        body.querySelectorAll('.wiz-opt').forEach(b=>b.onclick=()=>{
+          ans[st.key]=st.opts[+b.dataset.i].v; step++;
+          if(step<steps.length) renderStep(); else result();
+        });
+      }
+      const bk=body.querySelector('.wiz-back'); if(bk) bk.onclick=()=>{step--;renderStep();};
+    }
+    function result(){
+      let score=ans.stage+ans.bud; let key= score<=3?'bas': score<=5?'buy':'pre';
+      if(ans.pri==='sat' && key==='bas') key='buy';
+      if((ans.pri==='mar'||ans.pri==='denge') && key==='buy' && ans.bud>=4) key='pre';
+      // seçilen ihtiyaçlardan gerçek hizmet listesi
+      const needs = (ans.needs&&ans.needs.length)?ans.needs:['sm'];
+      const list = needs.map(n=>SVC[n][key]);
+      if(needs.includes('sm') && !list.some(x=>x.includes('Rapor'))) list.push('Aylık Performans Raporu');
+      const tierName=TIER[key];
+      const lbl=(k,v)=>{const s=steps.find(x=>x.key===k);return s.opts.find(o=>o.v===v).l;};
+      const needLbls=needs.map(n=>steps.find(s=>s.key==='needs').opts.find(o=>o.v===n).l).join(', ');
+      const msg=`*Paket Bulucu Sonucu*%0A%0AÖnerilen: *${tierName}*%0A`+
+        `Aşama: ${lbl('stage',ans.stage)}%0A`+`Sektör: ${lbl('sektor',ans.sektor)}%0A`+
+        `İhtiyaç: ${needLbls}%0A`+`Öncelik: ${lbl('pri',ans.pri)}%0A`+`Bütçe: ${lbl('bud',ans.bud)}%0A%0A`+
+        `Önerilen hizmetler:%0A`+list.map(x=>'• '+x).join('%0A')+`%0A%0ABu paket hakkında bilgi almak istiyorum.`;
+      body.innerHTML=`<div class="wiz-eyebrow">Senin İçin Önerim</div><h3>${tierName}</h3>
+        <div class="wiz-sub">${NOTE[key]}</div>
+        <div class="wiz-pkg"><div class="pn">${tierName}</div><ul>${list.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+        <a class="wiz-cta" href="https://wa.me/${WA}?text=${msg}" target="_blank" rel="noopener">Bu paketi WhatsApp'tan konuşalım →</a>
+        <button class="wiz-back" id="wizRestart">↻ Baştan dene</button>`;
+      body.querySelector('#wizRestart').onclick=()=>{ans={};multi=[];step=0;renderStep();};
+    }
+    function open(){ans={};multi=[];step=0;renderStep();ov.classList.add('open');}
+    function close(){ov.classList.remove('open');}
+    setTimeout(()=>tab.classList.add('show'),2500);
+    tab.onclick=open; closeBtn.onclick=close;
+    ov.addEventListener('click',e=>{if(e.target===ov)close();});
+  })();
+
+  // custom cursor (sadece masaüstü / fareli cihaz)
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    const dot=document.getElementById('curDot'), ring=document.getElementById('curRing');
+    let mx=0,my=0,rx=0,ry=0;
+    document.addEventListener('mousemove',e=>{
+      mx=e.clientX; my=e.clientY;
+      dot.style.left=mx+'px'; dot.style.top=my+'px';
+      document.body.classList.add('cursor-on');
+    });
+    document.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-on'));
+    (function loop(){
+      rx+=(mx-rx)*0.18; ry+=(my-ry)*0.18;
+      ring.style.left=rx+'px'; ring.style.top=ry+'px';
+      requestAnimationFrame(loop);
+    })();
+    document.querySelectorAll('a,button,.flip,.faq-q,.wa,.logo-chip').forEach(el=>{
+      el.addEventListener('mouseenter',()=>ring.classList.add('hover'));
+      el.addEventListener('mouseleave',()=>ring.classList.remove('hover'));
+    });
+  }
+
+  // flip cards (tap to flip on touch)
+  document.querySelectorAll('.flip').forEach(c=>{
+    c.addEventListener('click',()=>c.classList.toggle('flipped'));
+  });
+
   // mobile menu
   document.getElementById('toggle').addEventListener('click',function(){
     document.getElementById('nav').classList.toggle('show');
