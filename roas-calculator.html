@@ -280,7 +280,35 @@ a.tool-card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.25);box
   .svc-cta{flex-direction:column;align-items:flex-start}
 }
 
+
+  /* SEO içerik + SSS */
+  .seo{max-width:760px;margin:0 auto;padding:10px 24px 80px}
+  .seo h2{font-size:clamp(1.4rem,3.2vw,1.9rem);font-weight:800;margin:44px 0 14px}
+  .seo h3{font-size:1.15rem;font-weight:700;margin:28px 0 10px}
+  .seo p{color:#3a3a3c;font-size:1.02rem;line-height:1.75;margin-bottom:16px}
+  .seo ul,.seo ol{color:#3a3a3c;font-size:1.02rem;line-height:1.75;margin:0 0 18px 22px}
+  .seo li{margin-bottom:8px}
+  .seo strong{color:var(--text)}
+  .seo .formula{background:var(--bg-soft);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:12px;padding:16px 20px;margin:18px 0;font-size:1.05rem;font-weight:600;color:var(--text)}
+  .seo table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.96rem}
+  .seo th,.seo td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line)}
+  .seo th{background:var(--bg-soft);font-weight:700;color:var(--text)}
+  .seo td:first-child{font-weight:600;color:var(--text)}
+  .faq{margin-top:40px}
+  .faq h2{margin-bottom:18px}
+  .faq details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden;transition:border-color .2s}
+  .faq details[open]{border-color:rgba(229,9,20,.25)}
+  .faq summary{cursor:pointer;padding:18px 20px;font-weight:700;font-size:1.02rem;color:var(--text);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:1.4rem;color:var(--gold);font-weight:700;flex:none;transition:transform .2s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{padding:0 20px 18px;color:#3a3a3c;line-height:1.7;margin:0}
+  .seo-cta{background:linear-gradient(135deg,rgba(229,9,20,.06),rgba(229,9,20,.01));border:1px solid rgba(229,9,20,.16);border-radius:18px;padding:30px 28px;text-align:center;margin-top:46px}
+  .seo-cta h3{font-size:1.35rem;margin-bottom:10px}
+  .seo-cta p{color:var(--muted);max-width:460px;margin:0 auto 20px}
+
 </style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "ROAS ne demek?", "acceptedAnswer": {"@type": "Answer", "text": "ROAS, Return on Ad Spend (reklam harcamasının getirisi) kelimelerinin kısaltmasıdır. Reklama harcadığın her 1 liranın kaç lira gelir getirdiğini gösterir. ROAS 4 ise, harcadığın her 1 TL sana 4 TL olarak dönmüştür."}}, {"@type": "Question", "name": "İyi bir ROAS kaçtır?", "acceptedAnswer": {"@type": "Answer", "text": "Genel kural olarak 2-4 arası sağlıklı, 4-6 arası çok iyi, 6 ve üzeri mükemmel kabul edilir. Ancak iyi ROAS ürününün kâr marjına bağlıdır: düşük marjlı ürünlerde daha yüksek ROAS gerekirken, yüksek marjlı hizmetlerde 2-3 ROAS bile çok kârlı olabilir."}}, {"@type": "Question", "name": "ROAS nasıl hesaplanır?", "acceptedAnswer": {"@type": "Answer", "text": "ROAS = Reklamdan elde edilen gelir ÷ Reklam harcaması. Örneğin 5.000 TL harcayıp 20.000 TL gelir elde ettiysen ROAS'ın 4'tür. Yukarıdaki hesaplayıcıya bu iki rakamı girerek anında görebilirsin."}}, {"@type": "Question", "name": "ROAS ile ROI arasındaki fark nedir?", "acceptedAnswer": {"@type": "Answer", "text": "ROAS yalnızca reklam harcamasına karşı geliri ölçer. ROI ise ürün maliyeti, kargo, personel gibi tüm giderleri hesaba katarak gerçek kârı ölçer. ROAS kampanya performansını, ROI ise işin gerçek kârlılığını gösterir."}}, {"@type": "Question", "name": "ROAS düşükse ne yapmalıyım?", "acceptedAnswer": {"@type": "Answer", "text": "Hedeflemeyi daraltmak, kreatifi güçlendirmek, açılış sayfasını hızlandırmak, A/B test yapmak ve yeniden pazarlama (retargeting) kullanmak ROAS'ı yükseltir. Çoğu zaman düşük ROAS kötü ürün değil, optimize edilmemiş kampanya anlamına gelir."}}, {"@type": "Question", "name": "Hedef ROAS'ımı nasıl belirlerim?", "acceptedAnswer": {"@type": "Answer", "text": "Önce ürününün kâr marjını bul. Başa baş ROAS = 1 ÷ kâr marjı. Örneğin %25 marjda başa baş ROAS 4'tür; kâr etmek için hedefini bunun üzerine koymalısın."}}]}</script>
 </head>
 <body>
 <header>
@@ -351,6 +379,62 @@ a.tool-card:hover{transform:translateY(-4px);border-color:rgba(229,9,20,.25);box
     </div>
   </div>
 </main>
+<div class="wrap">
+<section class="seo">
+<h2>ROAS Nedir?</h2>
+<p><strong>ROAS (Return on Ad Spend)</strong>, Türkçesiyle "reklam harcamasının getirisi", reklama harcadığın her 1 liranın kaç lira gelir getirdiğini gösteren orandır. Dijital reklamcılıkta bir kampanyanın başarılı olup olmadığını anlamanın en hızlı ve en net yoludur. Meta (Instagram, Facebook) ve Google reklamlarında performansı değerlendirirken bakılan ilk metrik genellikle ROAS'tır.</p>
+<p>Basitçe: 10.000 TL reklam harcayıp 40.000 TL gelir elde ettiysen ROAS'ın 4'tür. Yani harcadığın her 1 TL sana 4 TL olarak geri dönmüştür.</p>
+
+<h2>ROAS Nasıl Hesaplanır?</h2>
+<p>ROAS hesaplama formülü oldukça basittir:</p>
+<div class="formula">ROAS = Reklamdan Elde Edilen Gelir ÷ Reklam Harcaması</div>
+<p>Örnek: Bir kampanyaya 5.000 TL harcadın ve bu kampanyadan 22.500 TL satış geldi. ROAS'ın 22.500 ÷ 5.000 = <strong>4,5x</strong> olur. Yukarıdaki hesaplayıcıya bu iki rakamı girerek aynı sonucu saniyede görebilir, ayrıca net kârını, ROI'unu ve kâr marjını da hesaplayabilirsin.</p>
+
+<h2>İyi Bir ROAS Kaçtır?</h2>
+<p>"İyi ROAS kaçtır" sorusunun tek bir cevabı yoktur; sektöre, ürün fiyatına ve kâr marjına göre değişir. Yine de genel bir referans tablosu şöyledir:</p>
+<table>
+<thead><tr><th>ROAS Değeri</th><th>Anlamı</th></tr></thead>
+<tbody>
+<tr><td>1'in altı</td><td>Zarar — reklam, gelirden fazlasına mal oluyor</td></tr>
+<tr><td>1 – 2 arası</td><td>Başa baş veya düşük — dikkatle optimize edilmeli</td></tr>
+<tr><td>2 – 4 arası</td><td>Sağlıklı — çoğu işletme için sürdürülebilir</td></tr>
+<tr><td>4 – 6 arası</td><td>Çok iyi — kârlı ve ölçeklenebilir kampanya</td></tr>
+<tr><td>6 ve üzeri</td><td>Mükemmel — güçlü ürün-pazar uyumu</td></tr>
+</tbody>
+</table>
+<p>Önemli nokta: Yüksek kâr marjlı ürünlerde (ör. dijital ürün, hizmet) 2-3 ROAS bile çok kârlı olabilirken, düşük marjlı ürünlerde (ör. gıda, toptan satış) 4-5 ROAS bile zar zor kâra geçirebilir. Bu yüzden ROAS'ı her zaman kendi <strong>kâr marjınla</strong> birlikte değerlendirmek gerekir.</p>
+
+<h2>Başa Baş (Break-even) ROAS Nasıl Bulunur?</h2>
+<p>Kampanyanın zarar etmemesi için ulaşması gereken minimum ROAS'a "başa baş ROAS" denir ve kâr marjına bağlıdır:</p>
+<div class="formula">Başa Baş ROAS = 1 ÷ Kâr Marjı</div>
+<p>Örnek: Ürününde %25 kâr marjı varsa, başa baş ROAS'ın 1 ÷ 0,25 = 4 olur. Yani ROAS 4'ün altındaysa o kampanya aslında sana para kaybettiriyordur. Bu yüzden hedef ROAS belirlerken önce kâr marjını bilmek şarttır.</p>
+
+<h2>ROAS ile ROI Arasındaki Fark</h2>
+<p>İkisi sık karıştırılır. <strong>ROAS</strong> sadece reklam harcamasına karşı geliri ölçer. <strong>ROI (Return on Investment)</strong> ise tüm maliyetleri (ürün maliyeti, kargo, personel, reklam ajansı ücreti vb.) hesaba katarak gerçek kârı ölçer. ROAS kampanya performansını hızlı görmek için, ROI ise işin gerçek kârlılığını anlamak için kullanılır. Yukarıdaki araç ikisini birden hesaplar.</p>
+
+<h2>ROAS Nasıl Artırılır?</h2>
+<p>Düşük ROAS, kampanyanın kötü olduğu anlamına gelmez; çoğu zaman optimize edilmemiş olduğu anlamına gelir. ROAS'ı yükseltmenin başlıca yolları:</p>
+<ul>
+<li><strong>Hedeflemeyi daraltmak:</strong> Doğru kitleye ulaşmak, boşa giden gösterimi azaltır.</li>
+<li><strong>Kreatifi güçlendirmek:</strong> İlk 3 saniyede durduran görsel/video, tıklama oranını ve dönüşümü artırır.</li>
+<li><strong>Açılış sayfasını iyileştirmek:</strong> Reklam iyi olsa bile yavaş veya karışık bir site satışı düşürür.</li>
+<li><strong>A/B test yapmak:</strong> Çalışan varyasyona bütçe kaydırmak ROAS'ı doğrudan yükseltir.</li>
+<li><strong>Yeniden pazarlama (retargeting):</strong> Siteyi ziyaret edip almayanlara tekrar ulaşmak en yüksek ROAS getiren yöntemlerden biridir.</li>
+<li><strong>Teklif ve kampanya hedefini doğru seçmek:</strong> Satış hedefli kampanya, etkileşim hedefliden çok daha iyi ROAS verir.</li>
+</ul>
+
+<h2>ROAS'ı Meta'da Nereden Görürsün?</h2>
+<p>Meta Ads Manager'da kampanya raporlarında "Satın Alma ROAS'ı" (Purchase ROAS) sütununu ekleyerek görebilirsin. Ancak bu rakamın doğru olması için Meta Pixel'in ve dönüşüm takibinin sitende düzgün kurulu olması gerekir. Pixel kurulu değilse Meta satışları göremez ve ROAS boş çıkar.</p>
+
+<div class="seo-cta">
+<h3>ROAS'ını artırmak mı istiyorsun?</h3>
+<p>Meta reklam hesabını ücretsiz analiz edip, kampanyalarını daha yüksek ROAS'a nasıl taşıyacağını birlikte planlayalım.</p>
+<a href="index.html#iletisim" class="btn btn-gold">Ücretsiz Reklam Analizi Al</a>
+</div>
+</section>
+<section class="faq seo"><h2>Sıkça Sorulan Sorular — ROAS Hesaplama</h2><details><summary>ROAS ne demek?</summary><p>ROAS, Return on Ad Spend (reklam harcamasının getirisi) kelimelerinin kısaltmasıdır. Reklama harcadığın her 1 liranın kaç lira gelir getirdiğini gösterir. ROAS 4 ise, harcadığın her 1 TL sana 4 TL olarak dönmüştür.</p></details><details><summary>İyi bir ROAS kaçtır?</summary><p>Genel kural olarak 2-4 arası sağlıklı, 4-6 arası çok iyi, 6 ve üzeri mükemmel kabul edilir. Ancak iyi ROAS ürününün kâr marjına bağlıdır: düşük marjlı ürünlerde daha yüksek ROAS gerekirken, yüksek marjlı hizmetlerde 2-3 ROAS bile çok kârlı olabilir.</p></details><details><summary>ROAS nasıl hesaplanır?</summary><p>ROAS = Reklamdan elde edilen gelir ÷ Reklam harcaması. Örneğin 5.000 TL harcayıp 20.000 TL gelir elde ettiysen ROAS&#x27;ın 4&#x27;tür. Yukarıdaki hesaplayıcıya bu iki rakamı girerek anında görebilirsin.</p></details><details><summary>ROAS ile ROI arasındaki fark nedir?</summary><p>ROAS yalnızca reklam harcamasına karşı geliri ölçer. ROI ise ürün maliyeti, kargo, personel gibi tüm giderleri hesaba katarak gerçek kârı ölçer. ROAS kampanya performansını, ROI ise işin gerçek kârlılığını gösterir.</p></details><details><summary>ROAS düşükse ne yapmalıyım?</summary><p>Hedeflemeyi daraltmak, kreatifi güçlendirmek, açılış sayfasını hızlandırmak, A/B test yapmak ve yeniden pazarlama (retargeting) kullanmak ROAS&#x27;ı yükseltir. Çoğu zaman düşük ROAS kötü ürün değil, optimize edilmemiş kampanya anlamına gelir.</p></details><details><summary>Hedef ROAS&#x27;ımı nasıl belirlerim?</summary><p>Önce ürününün kâr marjını bul. Başa baş ROAS = 1 ÷ kâr marjı. Örneğin %25 marjda başa baş ROAS 4&#x27;tür; kâr etmek için hedefini bunun üzerine koymalısın.</p></details></section>
+</div>
+
 
 <footer>
   <div class="wrap">
