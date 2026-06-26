@@ -45,17 +45,17 @@
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff;
-    --bg-soft:#F5F5DC;
-    --surface:#ffffff;
+    --bg:#0A1A2F;
+    --bg-soft:#12233D;
+    --surface:#12233D;
     --dark:#0A1A2F;
-    --line:rgba(0,0,0,.09);
-    --line-strong:rgba(0,0,0,.14);
-    --text:#1d1d1f;
-    --muted:#6e6e73;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.12);
+    --text:#EAEAEA;
+    --muted:#9BB0C9;
     --gold:#FE5516;
     --gold-deep:#c94312;
-    --gold-soft:rgba(254,85,22,.08);
+    --gold-soft:rgba(254,85,22,.10);
     --display:"Bricolage Grotesque",serif;
     --body:"Manrope",system-ui,sans-serif;
     --radius:18px;
@@ -75,7 +75,7 @@
   .btn-wa{background:#25d366;color:#fff;box-shadow:0 8px 24px rgba(37,211,102,.28)}
   .btn-wa:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(37,211,102,.38)}
 
-  header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(14px);background:rgba(255,255,255,.72);border-bottom:1px solid var(--line)}
+  header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(180%) blur(14px);background:rgba(10,26,47,.88);border-bottom:1px solid var(--line)}
   nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .logo{font-family:var(--display);font-weight:800;font-size:1.3rem;letter-spacing:-.03em;display:flex;align-items:center;gap:.5rem;color:var(--text)}
   .logo .dot{color:var(--gold)}
@@ -90,13 +90,13 @@
   .article-wrap h1{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;margin-bottom:20px}
   .article-lead{font-size:1.12rem;color:var(--muted);border-left:3px solid var(--gold);padding-left:18px;margin-bottom:42px;line-height:1.65}
   .article-wrap h2{font-size:1.45rem;margin:40px 0 16px}
-  .article-wrap p{color:#3a3a3c;font-size:1.02rem;line-height:1.7;margin-bottom:18px}
-  .article-wrap ul{color:#3a3a3c;font-size:1.02rem;line-height:1.7;margin:0 0 18px 22px}
+  .article-wrap p{color:var(--text);font-size:1.02rem;line-height:1.7;margin-bottom:18px}
+  .article-wrap ul{color:var(--text);font-size:1.02rem;line-height:1.7;margin:0 0 18px 22px}
   .article-wrap ul li{margin-bottom:10px}
   .checklist{list-style:none;margin-left:0}
   .checklist li{padding-left:28px;position:relative;margin-bottom:12px}
   .checklist li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:800}
-  .info-box{background:var(--bg-soft);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin:28px 0}
+  .info-box{background:var(--bg-soft);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:24px 28px;margin:28px 0}
   .info-box strong{color:var(--text)}
   .warn-box{background:rgba(254,85,22,.05);border:1px solid rgba(254,85,22,.2);border-radius:14px;padding:24px 28px;margin:28px 0}
   .warn-box strong{color:var(--gold)}
