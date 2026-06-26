@@ -278,25 +278,25 @@
   .card p{color:var(--muted);font-size:.98rem}
   .card .tag{position:absolute;top:24px;right:24px;font-size:.72rem;font-weight:700;color:var(--gold);background:var(--gold-soft);padding:5px 11px;border-radius:100px;letter-spacing:.04em}
 
-  /* flip cards */
-  .flip{background:transparent;border:none;perspective:1200px;min-height:250px;cursor:pointer}
-  .flip-inner{position:relative;width:100%;height:100%;min-height:250px;transition:transform .6s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
-  .flip:hover .flip-inner,.flip.flipped .flip-inner{transform:rotateY(180deg)}
-  .flip-face{position:absolute;inset:0;-webkit-backface-visibility:hidden;backface-visibility:hidden;background:rgba(254,85,22,.10);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;display:flex;flex-direction:column;box-shadow:0 4px 16px rgba(0,0,0,.04);overflow:hidden}
-  .flip:hover .flip-front{box-shadow:0 4px 16px rgba(0,0,0,.04)}
-  .flip-front{justify-content:flex-start}
-  .flip-front .ic{width:50px;height:50px;border-radius:14px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;margin-bottom:auto}
-  .flip-front .ic svg{width:26px;height:26px;stroke:var(--gold)}
-  .flip-front h3{font-size:1.18rem;margin-top:16px}
-  .flip-front .hint{font-size:.74rem;color:var(--muted);margin-top:8px;font-weight:600}
-  .flip-back{transform:rotateY(180deg);justify-content:flex-start;background:#12233D;border-color:#12233D;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
-  .flip-back .ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
-  .flip-back .ic svg{width:20px;height:20px;stroke:#fff}
-  .flip-back h3{color:#EAEAEA;font-size:1rem;margin-bottom:2px}
-  .flip-back p{color:rgba(234,234,234,.92);font-size:.8rem;line-height:1.5;margin:0}
-  .flip-back .feat-list{display:grid;gap:7px;margin-top:2px}
-  .flip-back .feat-list li{display:flex;align-items:flex-start;gap:8px;color:rgba(234,234,234,.92);font-size:.76rem;line-height:1.4;list-style:none}
-  .flip-back .feat-list li::before{content:"✓";color:#FE5516;font-weight:800;flex-shrink:0;margin-top:1px}
+  .service-bento{display:grid;grid-template-columns:1.2fr .8fr;grid-template-rows:repeat(2,minmax(220px,auto));gap:18px;margin-top:46px}
+  .service-card{position:relative;padding:24px 24px 22px;background:#12233D;border:1px solid rgba(255,255,255,.08);border-radius:22px;box-shadow:0 18px 45px rgba(0,0,0,.2);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}
+  .service-card:hover{transform:translateY(-4px);border-color:rgba(254,85,22,.4);box-shadow:0 24px 54px rgba(0,0,0,.28)}
+  .service-card::before{content:"";position:absolute;inset:-1px;border-radius:inherit;pointer-events:none;box-shadow:0 0 0 1px rgba(254,85,22,0) inset;transition:box-shadow .25s ease}
+  .service-card:hover::before{box-shadow:0 0 0 1px rgba(254,85,22,.35) inset}
+  .service-card .icon-wrap{width:48px;height:48px;border-radius:14px;background:rgba(254,85,22,.14);display:flex;align-items:center;justify-content:center;transition:transform .25s ease}
+  .service-card:hover .icon-wrap{transform:scale(1.06)}
+  .service-card .icon-wrap svg{width:24px;height:24px;stroke:#FE5516}
+  .service-card h3{font-size:1.18rem;margin:14px 0 8px;color:#EAEAEA}
+  .service-card p{color:#9BB0C9;font-size:.92rem;line-height:1.55;margin:0}
+  .service-card .feat-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 10px;margin-top:16px}
+  .service-card .feat-list li{display:flex;align-items:flex-start;gap:7px;color:#EAEAEA;font-size:.78rem;line-height:1.35;list-style:none}
+  .service-card .feat-list li::before{content:"✓";color:#FE5516;font-weight:800;flex-shrink:0;margin-top:1px}
+  .service-card.large{grid-row:span 2;min-height:458px}
+  .service-card.large .feat-list{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 12px}
+  .service-card.small{min-height:220px}
+
+  @media(max-width:860px){.service-bento{grid-template-columns:1fr}.service-card.large{grid-row:auto;min-height:220px}}
+  @media(max-width:560px){.service-card{padding:20px}.service-card .feat-list{grid-template-columns:1fr}.service-card h3{font-size:1.06rem}}
 
   /* AI band */
   .ai-band{background:linear-gradient(135deg,rgba(254,85,22,.06),rgba(254,85,22,.01));border:1px solid rgba(254,85,22,.14);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -606,87 +606,56 @@
       <h2 class="sec-title">Markanın ihtiyacı olan her şey.</h2>
       <p class="sec-sub">Tek tek ajans aramak yerine; reklamdan tasarıma, videodan stratejiye kadar tek elden.</p>
     </div>
-    <div class="grid-3">
-      <div class="flip reveal">
-        <div class="flip-inner">
-          <div class="flip-face flip-front">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
-            <h3>Meta Ads Yönetimi</h3>
-            <div class="hint">Detay için üzerine gel →</div>
-          </div>
-          <div class="flip-face flip-back">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
-            <h3>Meta Ads Yönetimi</h3>
-            <p>Instagram ve Facebook’ta hedef kitlene ulaşan reklam kampanyaları kurar, yönetir ve optimize ederim. Doğru hedefleme, dikkat çeken kreatif ve sürekli iyileştirmeyle bütçeni en verimli şekilde kullanırım.</p>
-            <ul class="feat-list">
-              <li>Kampanya kurulumu & yönetimi</li>
-              <li>Hedef kitle analizi</li>
-              <li>A/B test</li>
-              <li>Aylık raporlama</li>
-            </ul>
-          </div>
+    <div class="service-bento reveal">
+      <article class="service-card large">
+        <div>
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
+          <h3>Meta Ads Yönetimi</h3>
+          <p>Instagram ve Facebook’ta hedef kitlene ulaşan reklam kampanyaları kurar, yönetir ve optimize ederim. Doğru hedefleme, dikkat çeken kreatif ve sürekli iyileştirmeyle bütçeni en verimli şekilde kullanırım.</p>
         </div>
-      </div>
-      <div class="flip reveal">
-        <div class="flip-inner">
-          <div class="flip-face flip-front">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-            <h3>Google Ads Yönetimi</h3>
-            <div class="hint">Detay için üzerine gel →</div>
-          </div>
-          <div class="flip-face flip-back">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
-            <h3>Google Ads Yönetimi</h3>
-            <p>Arama, görüntülü ve YouTube reklamlarıyla markanı tam ihtiyaç anında müşterinin karşısına çıkarırım. Anahtar kelime stratejisi ve dönüşüm odaklı kurgu ile tıklamayı satışa çeviririm.</p>
-            <ul class="feat-list">
-              <li>Arama & görüntülü reklam</li>
-              <li>Anahtar kelime stratejisi</li>
-              <li>Dönüşüm takibi</li>
-              <li>Bütçe optimizasyonu</li>
-            </ul>
-          </div>
+        <ul class="feat-list">
+          <li>Kampanya kurulumu & yönetimi</li>
+          <li>Hedef kitle analizi</li>
+          <li>A/B test</li>
+          <li>Aylık raporlama</li>
+        </ul>
+      </article>
+      <article class="service-card small">
+        <div>
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
+          <h3>Google Ads Yönetimi</h3>
+          <p>Arama, görüntülü ve YouTube reklamlarıyla markanı tam ihtiyaç anında müşterinin karşısına çıkarırım.</p>
         </div>
-      </div>
-      <div class="flip reveal">
-        <div class="flip-inner">
-          <div class="flip-face flip-front">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
-            <h3>Grafik Tasarım</h3>
-            <div class="hint">Detay için üzerine gel →</div>
-          </div>
-          <div class="flip-face flip-back">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
-            <h3>Grafik Tasarım</h3>
-            <p>Logodan sosyal medya görsellerine, ambalajdan reklam kreatifine kadar markanın tüm görsel kimliğini tek elden tasarlarım. Tutarlı, profesyonel ve markana özel bir görünüm.</p>
-            <ul class="feat-list">
-              <li>Logo & kurumsal kimlik</li>
-              <li>Sosyal medya tasarımı</li>
-              <li>Reklam görselleri</li>
-              <li>Baskı & ambalaj</li>
-            </ul>
-          </div>
+        <ul class="feat-list">
+          <li>Arama & görüntülü reklam</li>
+          <li>Anahtar kelime stratejisi</li>
+          <li>Dönüşüm takibi</li>
+        </ul>
+      </article>
+      <article class="service-card small">
+        <div>
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
+          <h3>Grafik Tasarım</h3>
+          <p>Logodan sosyal medya görsellerine, ambalajdan reklam kreatifine kadar markanın görsel kimliğini tek elden tasarlarım.</p>
         </div>
-      </div>
-      <div class="flip reveal">
-        <div class="flip-inner">
-          <div class="flip-face flip-front">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
-            <h3>Video Prodüksiyon</h3>
-            <div class="hint">Detay için üzerine gel →</div>
-          </div>
-          <div class="flip-face flip-back">
-            <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
-            <h3>Video Prodüksiyon</h3>
-            <p>Reels, tanıtım filmi ve ürün videolarıyla markanı hareketlendiririm. Çekimden kurguya, renk düzenlemesinden ses tasarımına kadar tüm süreç bende.</p>
-            <ul class="feat-list">
-              <li>Reels & sosyal video</li>
-              <li>Tanıtım filmi</li>
-              <li>Ürün çekimi</li>
-              <li>Profesyonel kurgu & renk</li>
-            </ul>
-          </div>
+        <ul class="feat-list">
+          <li>Logo & kurumsal kimlik</li>
+          <li>Sosyal medya tasarımı</li>
+          <li>Reklam görselleri</li>
+        </ul>
+      </article>
+      <article class="service-card small">
+        <div>
+          <div class="icon-wrap"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
+          <h3>Video Prodüksiyon</h3>
+          <p>Reels, tanıtım filmi ve ürün videolarıyla markanı hareketlendiririm. Çekimden kurguya tüm süreç bende.</p>
         </div>
-      </div>
+        <ul class="feat-list">
+          <li>Reels & sosyal video</li>
+          <li>Tanıtım filmi</li>
+          <li>Profesyonel kurgu</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
