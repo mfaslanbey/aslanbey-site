@@ -378,27 +378,6 @@
   .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
   .reveal.in{opacity:1;transform:none}
 
-  /* indirim kuponu */
-  .coupon{position:fixed;top:-460px;left:24px;z-index:125;background:rgba(254,85,22,.10);border:1px solid rgba(255,255,255,.08);border-radius:20px;box-shadow:0 24px 70px rgba(0,0,0,.2);width:330px;max-width:calc(100vw - 32px);transition:top .75s cubic-bezier(.34,1.45,.64,1),opacity .35s;overflow:hidden}
-  .coupon.show{top:96px}
-  .coupon.hide{opacity:0;top:-460px}
-  .coupon-top{background:var(--gold);color:#fff;padding:18px 22px;text-align:center;position:relative}
-  .coupon-top .eb{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
-  .coupon-top .big{font-family:var(--display);font-weight:800;font-size:2.4rem;line-height:1;margin:4px 0 2px}
-  .coupon-top .sm{font-size:.82rem;opacity:.92}
-  .coupon-x{position:absolute;top:10px;right:12px;width:26px;height:26px;border:none;background:rgba(255,255,255,.22);color:#fff;border-radius:50%;font-size:.85rem;cursor:pointer;line-height:1}
-  .coupon-x:hover{background:rgba(255,255,255,.4)}
-  .coupon-notch{position:relative;height:0}
-  .coupon-notch::before,.coupon-notch::after{content:"";position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:var(--bg)}
-  .coupon-notch::before{left:-11px}
-  .coupon-notch::after{right:-11px}
-  .coupon-body{padding:22px;text-align:center}
-  .coupon-body .dash{border-top:2px dashed var(--line-strong);margin:-2px 0 16px}
-  .coupon-code{display:inline-block;font-family:var(--display);font-weight:800;font-size:1.1rem;letter-spacing:.1em;color:var(--text);background:var(--gold-soft);border:1px dashed var(--gold);border-radius:10px;padding:8px 18px;margin-bottom:16px}
-  .coupon-cta{display:block;background:#25d366;color:#fff;font-weight:800;padding:13px;border-radius:100px;text-decoration:none;font-size:.92rem}
-  .coupon-cta:hover{background:#1da851}
-  @media(max-width:520px){.coupon{left:16px}.coupon.show{top:80px}}
-
   /* paket bulucu sihirbazı */
   .wiz-tab{position:fixed;right:0;top:44%;transform:translateX(120%);z-index:62;background:var(--gold);color:#fff;border:none;cursor:pointer;padding:12px 16px;border-radius:14px 0 0 14px;box-shadow:-6px 6px 24px rgba(254,85,22,.3);display:flex;align-items:center;gap:9px;font-weight:700;font-size:.88rem;font-family:var(--body);transition:transform .55s cubic-bezier(.2,.8,.2,1),box-shadow .2s}
   .wiz-tab.show{transform:translateX(0)}
@@ -800,21 +779,6 @@
   </div>
 </div>
 
-<div class="coupon" id="coupon">
-  <div class="coupon-top">
-    <button class="coupon-x" id="couponX" aria-label="Kapat">✕</button>
-    <div class="eb">🎁 İlk Aya Özel</div>
-    <div class="big">%5 İndirim</div>
-    <div class="sm">İlk ay hizmet bedelinde geçerli</div>
-  </div>
-  <div class="coupon-notch"></div>
-  <div class="coupon-body">
-    <div class="dash"></div>
-    <div class="coupon-code">ILKAY5</div>
-    <a class="coupon-cta" id="couponCta" href="#" target="_blank" rel="noopener">Kuponu Kullan →</a>
-  </div>
-</div>
-
 <button class="wiz-tab" id="wizTab"><span class="wave">👋</span><span class="lbl">Sana özel paket</span></button>
 <div class="wiz-overlay" id="wizOverlay">
   <div class="wiz-modal" id="wizModal">
@@ -862,17 +826,6 @@
     link.addEventListener('click',open);
     closeBtn.onclick=()=>ov.classList.remove('open');
     ov.addEventListener('click',e=>{if(e.target===ov)ov.classList.remove('open');});
-  })();
-
-  // indirim kuponu
-  (function(){
-    const c=document.getElementById('coupon'), x=document.getElementById('couponX'), cta=document.getElementById('couponCta');
-    const msg='Merhaba, web sitesindeki *İlk Aya Özel %5 indirim* kuponunu (ILKAY5) kullanmak istiyorum.';
-    cta.href='https://wa.me/905435188995?text='+encodeURIComponent(msg);
-    setTimeout(()=>c.classList.add('show'),4500);
-    function hide(){c.classList.remove('show');c.classList.add('hide');setTimeout(()=>{c.style.display='none';},450);}
-    x.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();hide();});
-    cta.addEventListener('click',()=>setTimeout(hide,200));
   })();
 
   // paket bulucu sihirbazı
