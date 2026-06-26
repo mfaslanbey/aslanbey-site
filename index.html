@@ -289,11 +289,14 @@
   .flip-front .ic svg{width:26px;height:26px;stroke:var(--gold)}
   .flip-front h3{font-size:1.18rem;margin-top:16px}
   .flip-front .hint{font-size:.74rem;color:var(--muted);margin-top:8px;font-weight:600}
-  .flip-back{transform:rotateY(180deg);justify-content:center;background:#12233D;border-color:#12233D}
-  .flip-back .ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+  .flip-back{transform:rotateY(180deg);justify-content:flex-start;background:#12233D;border-color:#12233D;padding:22px 20px;display:flex;flex-direction:column;gap:10px}
+  .flip-back .ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;margin-bottom:4px}
   .flip-back .ic svg{width:20px;height:20px;stroke:#fff}
-  .flip-back h3{color:#EAEAEA;font-size:1rem;margin-bottom:8px}
-  .flip-back p{color:rgba(234,234,234,.92);font-size:.82rem;line-height:1.5}
+  .flip-back h3{color:#EAEAEA;font-size:1rem;margin-bottom:2px}
+  .flip-back p{color:rgba(234,234,234,.92);font-size:.8rem;line-height:1.5;margin:0}
+  .flip-back .feat-list{display:grid;gap:7px;margin-top:2px}
+  .flip-back .feat-list li{display:flex;align-items:flex-start;gap:8px;color:rgba(234,234,234,.92);font-size:.76rem;line-height:1.4;list-style:none}
+  .flip-back .feat-list li::before{content:"✓";color:#FE5516;font-weight:800;flex-shrink:0;margin-top:1px}
 
   /* AI band */
   .ai-band{background:linear-gradient(135deg,rgba(254,85,22,.06),rgba(254,85,22,.01));border:1px solid rgba(254,85,22,.14);border-radius:24px;padding:54px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
@@ -614,7 +617,13 @@
           <div class="flip-face flip-back">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></svg></div>
             <h3>Meta Ads Yönetimi</h3>
-            <p>Instagram ve Facebook reklamları. Doğru kitle, temiz kurgu, ölçülebilir dönüşüm. Bütçeni boşa harcatmam.</p>
+            <p>Instagram ve Facebook’ta hedef kitlene ulaşan reklam kampanyaları kurar, yönetir ve optimize ederim. Doğru hedefleme, dikkat çeken kreatif ve sürekli iyileştirmeyle bütçeni en verimli şekilde kullanırım.</p>
+            <ul class="feat-list">
+              <li>Kampanya kurulumu & yönetimi</li>
+              <li>Hedef kitle analizi</li>
+              <li>A/B test</li>
+              <li>Aylık raporlama</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -628,7 +637,13 @@
           <div class="flip-face flip-back">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg></div>
             <h3>Google Ads Yönetimi</h3>
-            <p>Arama, görüntülü ve performans kampanyaları. Müşterin seni tam aradığı anda karşısında olursun.</p>
+            <p>Arama, görüntülü ve YouTube reklamlarıyla markanı tam ihtiyaç anında müşterinin karşısına çıkarırım. Anahtar kelime stratejisi ve dönüşüm odaklı kurgu ile tıklamayı satışa çeviririm.</p>
+            <ul class="feat-list">
+              <li>Arama & görüntülü reklam</li>
+              <li>Anahtar kelime stratejisi</li>
+              <li>Dönüşüm takibi</li>
+              <li>Bütçe optimizasyonu</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -642,7 +657,13 @@
           <div class="flip-face flip-back">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7a2.8 2.8 0 0 0-4-4l-7 7"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18z"/><path d="M2 2l7.6 7.6"/><circle cx="11" cy="11" r="2"/></svg></div>
             <h3>Grafik Tasarım</h3>
-            <p>Sosyal medya içerikleri, reklam görselleri, kurumsal kimlik. Markanı her yerde tutarlı ve profesyonel gösteririm.</p>
+            <p>Logodan sosyal medya görsellerine, ambalajdan reklam kreatifine kadar markanın tüm görsel kimliğini tek elden tasarlarım. Tutarlı, profesyonel ve markana özel bir görünüm.</p>
+            <ul class="feat-list">
+              <li>Logo & kurumsal kimlik</li>
+              <li>Sosyal medya tasarımı</li>
+              <li>Reklam görselleri</li>
+              <li>Baskı & ambalaj</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -656,7 +677,13 @@
           <div class="flip-face flip-back">
             <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="14" height="14" rx="2"/><path d="m22 8-6 4 6 4V8z"/></svg></div>
             <h3>Video Prodüksiyon</h3>
-            <p>Tanıtım videoları, reels, reklam filmleri. Çekimden kurguya, renk düzenlemesinden teslimata kadar.</p>
+            <p>Reels, tanıtım filmi ve ürün videolarıyla markanı hareketlendiririm. Çekimden kurguya, renk düzenlemesinden ses tasarımına kadar tüm süreç bende.</p>
+            <ul class="feat-list">
+              <li>Reels & sosyal video</li>
+              <li>Tanıtım filmi</li>
+              <li>Ürün çekimi</li>
+              <li>Profesyonel kurgu & renk</li>
+            </ul>
           </div>
         </div>
       </div>
