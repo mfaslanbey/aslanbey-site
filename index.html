@@ -386,15 +386,15 @@
   @keyframes wave{0%,55%,100%{transform:rotate(0)}8%{transform:rotate(16deg)}16%{transform:rotate(-8deg)}24%{transform:rotate(16deg)}32%{transform:rotate(-4deg)}40%{transform:rotate(12deg)}}
   @media(max-width:520px){.wiz-tab .lbl{display:none}.wiz-tab{padding:14px}}
 
-  .wiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:130;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:20px}
+  .wiz-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:130;opacity:0;pointer-events:none;transition:opacity .3s;display:flex;align-items:center;justify-content:center;padding:20px}
   .wiz-overlay.open{opacity:1;pointer-events:auto}
-  .wiz-modal{background:rgba(254,85,22,.10);border-radius:22px;max-width:440px;width:100%;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.3);transform:translateY(20px) scale(.98);transition:transform .3s;max-height:90vh;overflow-y:auto;position:relative}
+  .wiz-modal{background:#12233D;border:1px solid rgba(255,255,255,.08);border-radius:22px;max-width:440px;width:100%;padding:30px;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:translateY(20px) scale(.98);transition:transform .3s;max-height:90vh;overflow-y:auto;position:relative}
   .wiz-overlay.open .wiz-modal{transform:none}
-  .wiz-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border:none;background:var(--bg-soft);border-radius:50%;font-size:1.1rem;cursor:pointer;color:var(--muted)}
-  .wiz-close:hover{background:#eee;color:var(--text)}
+  .wiz-close{position:absolute;top:18px;right:18px;width:32px;height:32px;border:none;background:rgba(255,255,255,.08);border-radius:50%;font-size:1.1rem;cursor:pointer;color:#EAEAEA}
+  .wiz-close:hover{background:rgba(255,255,255,.15);color:#fff}
   .wiz-eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
-  .wiz-modal h3{font-size:1.5rem;margin:6px 0 4px}
-  .wiz-modal .wiz-sub{color:var(--muted);font-size:.92rem;margin-bottom:22px}
+  .wiz-modal h3{font-size:1.5rem;margin:6px 0 4px;color:#EAEAEA}
+  .wiz-modal .wiz-sub{color:rgba(234,234,234,.92);font-size:.92rem;margin-bottom:22px}
   .wiz-progress{display:flex;gap:6px;margin-bottom:22px}
   .wiz-progress span{height:5px;flex:1;border-radius:100px;background:var(--line)}
   .wiz-progress span.on{background:var(--gold)}
